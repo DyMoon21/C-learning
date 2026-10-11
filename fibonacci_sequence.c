@@ -11,7 +11,16 @@ int fibonacci(int n) {
     return result;
 }
 
+//以递归的方式实现
+int fibonacci_recursive(int n) {
+    if (n <= 2) {
+        return 1;
+    }
+    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2);
+}
+
 int main()
 {
     printf("%d\n", fibonacci(5));
+    printf("%d\n", fibonacci_recursive(5));
 }
