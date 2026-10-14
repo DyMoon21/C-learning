@@ -19,6 +19,17 @@ void initHero(struct Hero *h)
     (*h).attackSpeed = 100;
 }
 
+//(*h).life还可以写成h->life
+/*void initHero(struct Hero *h)
+{
+    strcpy((*h).heroName,"亚瑟");
+    (*h).life = 5000;
+    (*h).magic = 0;
+    (*h).attack = 2000;
+    (*h).attackSpeed = 100;
+}
+*/
+
 int main()
 {
     struct Hero h;
