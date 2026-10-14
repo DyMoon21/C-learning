@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 struct weapon
@@ -46,15 +47,15 @@ void initHero(struct Hero *h)
 
 int main()
 {
-    struct Hero h;
-    initHero(&h);
-    struct weapon w;
-    strcpy(w.weaponName, "泣血之刃");
-    w.attack = 2000;
-    w.attackSpeed = 100;
+    struct Hero *h = (struct Hero*)malloc (sizeof(struct Hero));
+    initHero(h);
+    struct weapon *w = (struct weapon*)malloc(sizeof(struct weapon));
+    strcpy(w->weaponName, "泣血之刃");
+    w->attack = 2000;
+    w->attackSpeed = 100;
 
-    setWeapon(&h,&w);
+    setWeapon(h,w);
 
-    printf("%s, %lf, %lf, %lf, %lf\n", h.heroName, h.life, h.magic, h.attack, h. attackSpeed);
+    printf("%s, %lf, %lf, %lf, %lf\n", h->heroName, h->life, h->magic, h->attack, h->attackSpeed);
     return 0;
 }
